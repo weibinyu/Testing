@@ -5,6 +5,6 @@ public class ShoppingCartTest {
 	@Test
 	public void CreateInstanceOfRegister() {
 		ShoppingCart cart = new ShoppingCart();
-		assertEquals(0, cart.getSum());
+		assertEquals(0, cart.getTotalPrice());
 	}
 }
