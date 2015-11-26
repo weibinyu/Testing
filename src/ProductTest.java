@@ -18,7 +18,12 @@ public class ProductTest {
 	}
 	
 	@Test(expected =IllegalArgumentException.class)
-	public void shouldTriggerException() {
+	public void shouldTriggerExceptionWhenPriceNegative() {
 		Product p = new Product("Eggs", -3);
+	}
+	
+	@Test(expected =IllegalArgumentException.class)
+	public void shouldTriggerExceptionWhenNameEmpty() {
+		Product p = new Product("", 3);
 	}
 }
