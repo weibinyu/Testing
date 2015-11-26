@@ -4,7 +4,7 @@ public class Product {
 	private int price;
 	
 	public Product(String name, int price) {
-		if(price < 0){
+		if(price < 0 || name == ""){
 				throw new IllegalArgumentException();
 			}
 		this.name = name;
