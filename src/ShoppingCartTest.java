@@ -28,7 +28,7 @@ public class ShoppingCartTest {
 	public void shouldAddItemToRegister() {
 		ShoppingCart cart = new ShoppingCart();
 		List<Product> Products = new ArrayList<Product>();
-		Product milk = Mockito.mock(Product.class)
+		Product milk = Mockito.mock(Product.class);
 		Products.add(milk);
 		cart.addItem(milk);
 		assertEquals(Products, cart.getProducts());
