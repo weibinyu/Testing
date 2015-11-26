@@ -82,7 +82,7 @@ public class ShoppingCartTest {
 		PrintStream printStream = Mockito.mock(PrintStream.class);
 		String receipt = cart.getReceipt();
 		cart.printReceipt(receipt, printStream);
-		Mockito.verify(printStream).println("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65");
+		Mockito.verify(printStream).println("Milk 30, Eggs 25, Candy 10, Number of Products 3, Total 65");
 	}
 }
 
