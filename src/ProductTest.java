@@ -13,7 +13,7 @@ public class ProductTest {
 	@Test
 	public void shouldReturnCorrectProduct() {
 		Product p = new Product("Milk", 30);
-		assertEquals("Milk", p.getProduct());
+		assertEquals("Milk", p.getName());
 		assertEquals(30, p.getPrice());
 	}
 }
