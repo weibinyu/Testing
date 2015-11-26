@@ -9,5 +9,5 @@ public class ShoppingCart {
 	public int getTotalPrice() {
 		return TotalPrice;
 	}
-
+	
 }
