@@ -3,6 +3,7 @@ import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,5 +58,31 @@ public class ShoppingCartTest {
 		
 		assertEquals("Milk 30, Eggs 25, Candy 10, Number of Products 3, Total 65", cart.getReceipt());
 		}
+	
+	@Test
+	public void shouldPrintReceipt(){
+		ShoppingCart cart = new ShoppingCart();
+		Product milk = Mockito.mock(Product.class);
+		Mockito.when(milk.getPrice()).thenReturn(30);
+		Mockito.when(milk.getName()).thenReturn("Milk");
+		
+
+		Product eggs = Mockito.mock(Product.class);
+		Mockito.when(eggs.getPrice()).thenReturn(25);
+		Mockito.when(eggs.getName()).thenReturn("Eggs");
+		
+
+		Product candy = Mockito.mock(Product.class);
+		Mockito.when(candy.getPrice()).thenReturn(10);
+		Mockito.when(candy.getName()).thenReturn("Candy");
+		
+		cart.addProduct(milk);
+		cart.addProduct(eggs);
+		cart.addProduct(candy);
+		PrintStream printStream = Mockito.mock(PrintStream.class);
+		String receipt = cart.getReceipt();
+		cart.printReceipt(receipt, printStream);
+		Mockito.verify(printStream).println("Milk 30, Eggs 25, Candy 10, Nr of items 3, Sum 65");
+	}
 }
 
