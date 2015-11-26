@@ -9,5 +9,7 @@ public class ShoppingCart {
 	public int getTotalPrice() {
 		return TotalPrice;
 	}
-	
+	public void addItem(Product p){
+		TotalPrice += p.getPrice();
+}
 }
