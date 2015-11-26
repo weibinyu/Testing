@@ -16,4 +16,9 @@ public class ProductTest {
 		assertEquals("Milk", p.getName());
 		assertEquals(30, p.getPrice());
 	}
+	
+	@Test(expected =IllegalArgumentException.class)
+	public void shouldTriggerException() {
+		Product p = new Product("Eggs", -3);
+	}
 }
