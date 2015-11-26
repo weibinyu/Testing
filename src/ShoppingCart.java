@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,5 +34,11 @@ public class ShoppingCart {
 		sb.append(", Total " + TotalPrice);
 		
 		return sb.toString();
+	}
+	
+	public void printReceipt(String receipt, PrintStream printStream) {
+		Printer p = new Printer();
+		p.print(receipt, printStream);
+		
 	}
 }
