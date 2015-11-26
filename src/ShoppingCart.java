@@ -12,7 +12,7 @@ public class ShoppingCart {
 	public int getTotalPrice() {
 		return TotalPrice;
 	}
-	public void addItem(Product p){
+	public void addProduct(Product p){
 		TotalPrice += p.getPrice();
 		Products.add(p);
 	}
