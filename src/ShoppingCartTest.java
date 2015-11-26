@@ -37,13 +37,25 @@ public class ShoppingCartTest {
 	@Test
 	public void shouldGetReceipt() {
 		ShoppingCart cart = new ShoppingCart();
-		Product milk = new Product("Milk", 30);
-		Product eggs = new Product("Eggs", 25);
-		Product candy = new Product("Candy", 10);
+		Product milk = Mockito.mock(Product.class);
+		Mockito.when(milk.getPrice()).thenReturn(30);
+		Mockito.when(milk.getName()).thenReturn("Milk");
+		
+
+		Product eggs = Mockito.mock(Product.class);
+		Mockito.when(eggs.getPrice()).thenReturn(25);
+		Mockito.when(eggs.getName()).thenReturn("Eggs");
+		
+
+		Product candy = Mockito.mock(Product.class);
+		Mockito.when(candy.getPrice()).thenReturn(10);
+		Mockito.when(candy.getName()).thenReturn("Candy");
+		
 		cart.addProduct(milk);
 		cart.addProduct(eggs);
 		cart.addProduct(candy);
-		assertEquals("Milk 30, Eggs 25, Candy 10, Number items 3, Sum 65", cart.returnReceipt());
-	}
+		
+		assertEquals("Milk 30, Eggs 25, Candy 10, Number of Products 3, Total 65", cart.getReceipt());
+		}
 }
 

@@ -12,11 +12,26 @@ public class ShoppingCart {
 	public int getTotalPrice() {
 		return TotalPrice;
 	}
+	
 	public void addProduct(Product p){
 		TotalPrice += p.getPrice();
 		Products.add(p);
 	}
+	
 	public List<Product> getProducts(){
 		return Products;
+	}
+	
+	public String getReceipt(){
+		StringBuilder sb = new StringBuilder();
+		
+		for(Product i : Products){
+			sb.append(i.getName() + " " + i.getPrice() + ", ");
+		}
+		
+		sb.append("Number of Products " + Products.size());
+		sb.append(", Total " + TotalPrice);
+		
+		return sb.toString();
 	}
 }
